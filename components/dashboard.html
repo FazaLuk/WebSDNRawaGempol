@@ -1,0 +1,166 @@
+<h3 class="mb-4">Dashboard</h3>
+
+<!-- FILTER -->
+<div class="row">
+  <!-- PERIODE DULU -->
+  <div class="col-md-3">
+    <label>Periode</label>
+    <select id="filterPeriode" class="form-select">
+      <option value="harian">Harian</option>
+      <option value="mingguan">Mingguan (pilih tanggal Akhirnya saja)</option>
+      <option value="bulanan">Bulanan</option>
+    </select>
+  </div>
+
+  <!-- INPUT TANGGAL MODERN -->
+  <div class="col-md-3">
+    <label id="labelTanggal">Tanggal</label>
+
+    <!-- ❌ HAPUS type="date" -->
+    <!-- ✅ GANTI jadi text -->
+    <input
+      type="text"
+      id="filterTanggal"
+      class="form-control"
+      placeholder="Pilih tanggal / range / bulan"
+    />
+
+    <small id="labelPeriode" style="color: #666"></small>
+  </div>
+
+  <!-- KELAS -->
+  <div class="col-md-3">
+    <label>Kelas</label>
+    <select id="filterKelas" class="form-select">
+      <option value="semua">Semua Kelas</option>
+      <option value="1A">1A</option>
+      <option value="1B">1B</option>
+      <option value="1C">1C</option>
+      <option value="2A">2A</option>
+      <option value="2B">2B</option>
+      <option value="2C">2C</option>
+      <option value="3A">3A</option>
+      <option value="3B">3B</option>
+      <option value="3C">3C</option>
+      <option value="4A">4A</option>
+      <option value="4B">4B</option>
+      <option value="4C">4C</option>
+      <option value="5A">5A</option>
+      <option value="5B">5B</option>
+      <option value="5C">5C</option>
+      <option value="6A">6A</option>
+      <option value="6B">6B</option>
+      <option value="6C">6C</option>
+    </select>
+  </div>
+
+  <!-- BUTTON -->
+  <div class="col-md-2 d-flex align-items-end">
+    <button class="btn btn-primary w-100" onclick="refreshDashboard()">
+      Refresh
+    </button>
+  </div>
+</div>
+
+<!-- STAT CARD -->
+<div class="row">
+  <div class="col-md-2">
+    <div class="card stat-card text-center">
+      <small>Total Siswa</small>
+      <h4 id="totalSiswa">0</h4>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="card stat-card text-center">
+      <small>Hadir</small>
+      <h4 id="statHadir">0</h4>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="card stat-card text-center">
+      <small>Izin</small>
+      <h4 id="statIzin">0</h4>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="card stat-card text-center">
+      <small>Sakit</small>
+      <h4 id="statSakit">0</h4>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="card stat-card text-center">
+      <small>Alpha</small>
+      <h4 id="statAlpha">0</h4>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="card stat-card text-center">
+      <small>Belum Ada Keterangan</small>
+      <h4 id="statBelum">0</h4>
+    </div>
+  </div>
+</div>
+
+<!-- CHART -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="card chart-box">
+      <h6>Grafik Kehadiran</h6>
+      <canvas id="chartAbsensi"></canvas>
+      <div
+        id="emptyAbsensi"
+        style="
+          display: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #888;
+          font-size: 14px;
+        "
+      >
+        Tidak ada data pada periode ini
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card chart-box">
+      <h6>Jumlah Siswa per Kelas</h6>
+      <canvas id="chartKelas"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM -->
+<div class="row">
+  <!-- SISWA PERLU PERHATIAN -->
+  <div class="col-md-4">
+    <div class="card">
+      <h6>Siswa Perlu Perhatian</h6>
+      <div id="peringatanSiswa"></div>
+    </div>
+  </div>
+
+  <!-- SPK -->
+  <div class="col-md-4">
+    <div class="card">
+      <h6>Rekomendasi Bantuan</h6>
+      <div id="topSPK"></div>
+    </div>
+  </div>
+
+  <!-- TOP NILAI -->
+  <div class="col-md-4">
+    <div class="card chart-box">
+      <h6>Top 5 Nilai Tertinggi</h6>
+      <canvas id="chartNilai"></canvas>
+    </div>
+  </div>
+</div>

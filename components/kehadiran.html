@@ -1,0 +1,85 @@
+<div class="page kehadiran-page">
+  <div class="card p-3">
+    <h4 class="mb-3">Input Kehadiran Siswa</h4>
+
+    <!-- FILTER -->
+    <div class="d-flex gap-2 mb-3">
+      <input type="date" id="tanggalKehadiran" class="form-control" />
+
+      <select id="kelasKehadiran" class="form-select">
+        <option value="">-- Pilih Kelas --</option>
+        <option>1A</option>
+        <option>1B</option>
+        <option>1C</option>
+        <option>2A</option>
+        <option>2B</option>
+        <option>2C</option>
+        <option>3A</option>
+        <option>3B</option>
+        <option>3C</option>
+        <option>4A</option>
+        <option>4B</option>
+        <option>4C</option>
+        <option>5A</option>
+        <option>5B</option>
+        <option>5C</option>
+        <option>6A</option>
+        <option>6B</option>
+        <option>6C</option>
+      </select>
+
+      <button class="btn btn-primary" onclick="handleTampilkanKehadiran()">
+        Tampilkan
+      </button>
+
+      <button class="btn btn-success" onclick="handleSimpanKehadiran()">
+        Simpan
+      </button>
+      <button class="btn btn-success" onclick="exportKehadiranExcel()">
+        Export Excel
+      </button>
+    </div>
+
+    <!-- CARD -->
+    <div class="row mb-3" id="cardKehadiran" style="display: none">
+      <div class="col-md-3">
+        <div class="card text-center card-green">
+          <small>Hadir</small>
+          <h4 id="jmlHadir">0</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center card-blue">
+          <small>Izin</small>
+          <h4 id="jmlIzin">0</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center card-orange">
+          <small>Sakit</small>
+          <h4 id="jmlSakit">0</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center card-red">
+          <small>Alpha</small>
+          <h4 id="jmlAlpha">0</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tableKehadiran"></tbody>
+    </table>
+  </div>
+</div>

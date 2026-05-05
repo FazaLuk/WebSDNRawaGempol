@@ -1,0 +1,79 @@
+<div class="page">
+  <div class="page nilai-page">
+    <h4 class="mb-3">Input Nilai Siswa</h4>
+
+    <div class="d-flex gap-2 mb-3">
+      <select id="filterKelasNilai" class="form-select">
+        <option value="">-- Pilih Kelas --</option>
+        <option>1A</option>
+        <option>1B</option>
+        <option>1C</option>
+        <option>2A</option>
+        <option>2B</option>
+        <option>2C</option>
+        <option>3A</option>
+        <option>3B</option>
+        <option>3C</option>
+        <option>4A</option>
+        <option>4B</option>
+        <option>4C</option>
+        <option>5A</option>
+        <option>5B</option>
+        <option>5C</option>
+        <option>6A</option>
+        <option>6B</option>
+        <option>6C</option>
+      </select>
+
+      <select id="filterMapelNilai" class="form-select">
+        <option value="">-- Pilih Mapel --</option>
+        <option>Matematika</option>
+        <option>B. Indonesia</option>
+        <option>IPA</option>
+      </select>
+      <!-- 🔥 TOMBOL EXPORT -->
+      <button class="btn btn-success" onclick="exportExcel()">
+        Export Excel
+      </button>
+
+      <!-- 🔥 TOMBOL TAMPIL -->
+      <button class="btn btn-primary" onclick="handleTampilkanNilai()">
+        Tampilkan
+      </button>
+
+      <button class="btn btn-success" onclick="handleSimpanNilai()">
+        Simpan
+      </button>
+    </div>
+
+    <!-- 🔥 CARD -->
+    <div class="row mb-3" id="statCard" style="display: none">
+      <div class="col-md-4">
+        <div class="card card-blue text-center">
+          <small>Rata-rata Kelas</small>
+          <h4 id="avgKelas">-</h4>
+          <small id="predikatKelas"></small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-green text-center">
+          <small>Nilai Tertinggi</small>
+          <h4 id="nilaiTertinggi">-</h4>
+          <small id="namaTertinggi"></small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-red text-center">
+          <small>Nilai Terendah</small>
+          <h4 id="nilaiTerendah">-</h4>
+          <small id="namaTerendah"></small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔥 TABEL -->
+    <div id="tableNilai"></div>
+  </div>
+</div>

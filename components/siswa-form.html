@@ -1,0 +1,76 @@
+<div class="page">
+  <div class="card p-4">
+    <div class="d-flex justify-content-between mb-3">
+      <h4>Tambah Siswa</h4>
+      <div>
+        <button class="btn btn-secondary" onclick="loadPage('siswa')">
+          Batal
+        </button>
+        <button class="btn btn-primary" onclick="saveDataForm()">Simpan</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <label>NISN</label>
+        <input
+          id="nisn"
+          class="form-control mb-3"
+          oninput="validateNISN(this)"
+        />
+
+        <label>Nama Lengkap</label>
+        <input id="nama" class="form-control mb-3" />
+
+        <label>Nama Orang Tua</label>
+        <input id="ortu" class="form-control mb-3" />
+      </div>
+
+      <div class="col-md-6">
+        <label>Penghasilan Orang Tua</label>
+        <select id="penghasilan" class="form-control mb-3">
+          <option value="">-- Pilih Penghasilan --</option>
+          <option value="4">&lt; 1.000.000</option>
+          <option value="3">1.000.000 - 2.000.000</option>
+          <option value="2">2.000.000 - 3.000.000</option>
+          <option value="1">&gt; 3.000.000</option>
+        </select>
+
+        <label>Status Rumah</label>
+        <select id="rumah" class="form-control mb-3">
+          <option value="1">Milik Sendiri</option>
+          <option value="4">Mengontrak</option>
+          <option value="5">Menumpang</option>
+        </select>
+
+        <label>Jenis Kelamin</label>
+        <select id="jk" class="form-control mb-3">
+          <option value="L">Laki-laki</option>
+          <option value="P">Perempuan</option>
+        </select>
+
+        <label>Kelas</label>
+        <select id="kelas" class="form-control">
+          <option>1A</option>
+          <option>1B</option>
+          <option>1C</option>
+          <option>2A</option>
+          <option>2B</option>
+          <option>2C</option>
+          <option>3A</option>
+          <option>3B</option>
+          <option>3C</option>
+          <option>4A</option>
+          <option>4B</option>
+          <option>4C</option>
+          <option>5A</option>
+          <option>5B</option>
+          <option>5C</option>
+          <option>6A</option>
+          <option>6B</option>
+          <option>6C</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

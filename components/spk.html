@@ -1,0 +1,169 @@
+<div class="page spk-page">
+  <div class="card p-3">
+    <h4 class="mb-3">Rekomendasi Bantuan</h4>
+
+    <!-- FILTER -->
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label>Kelas</label>
+        <select id="kelasSPK" class="form-select">
+          <option value="">Semua Kelas</option>
+          <option>1A</option>
+          <option>1B</option>
+          <option>1C</option>
+          <option>2A</option>
+          <option>2B</option>
+          <option>2C</option>
+          <option>3A</option>
+          <option>3B</option>
+          <option>3C</option>
+          <option>4A</option>
+          <option>4B</option>
+          <option>4C</option>
+          <option>5A</option>
+          <option>5B</option>
+          <option>5C</option>
+          <option>6A</option>
+          <option>6B</option>
+          <option>6C</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label>Status Rumah</label>
+        <select id="rumahSPK" class="form-select">
+          <option value="">Semua</option>
+          <option value="5">Menumpang</option>
+          <option value="4">Kontrak</option>
+          <option value="1">Milik Sendiri</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label>Penghasilan</label>
+        <select id="penghasilanSPK" class="form-select">
+          <option value="">Semua</option>
+          <option value="4">< Rp1.000.000</option>
+          <option value="3">Rp1.000.000 - Rp2.000.000</option>
+          <option value="2">Rp2.000.000 - Rp3.000.000</option>
+          <option value="1">> Rp3.000.000</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 d-flex align-items-end">
+        <button class="btn btn-success w-100" onclick="handleSPK()">
+          Filter
+        </button>
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <div class="card text-center card-blue">
+          <small>Total Siswa</small>
+          <h4 id="totalSiswa">0</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center card-red">
+          <small>Prioritas Tinggi</small>
+          <h4 id="prioritasTinggi">0</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center card-orange">
+          <small>Prioritas Sedang</small>
+          <h4 id="prioritasSedang">0</h4>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center card-green">
+          <small>Prioritas Rendah</small>
+          <h4 id="prioritasRendah">0</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Siswa</th>
+          <th>Status Rumah</th>
+          <th>Penghasilan Orang Tua</th>
+          <th>Skor Kriteria</th>
+          <th>Status Prioritas</th>
+        </tr>
+      </thead>
+      <tbody id="tableSPK"></tbody>
+    </table>
+    <div class="d-flex justify-content-between mt-2">
+      <button class="btn btn-sm btn-primary" onclick="prevPage()">◀</button>
+      <span id="pageInfo" class="align-self-center"></span>
+      <button class="btn btn-sm btn-primary" onclick="nextPage()">▶</button>
+    </div>
+
+    <div class="card mt-3 card-kriteria">
+      <div class="card-body p-2">
+        <small class="text-muted">
+          <strong>Kriteria:</strong> Penghasilan & Status Rumah
+        </small>
+
+        <!-- MINI TABLE -->
+        <div class="row mt-2">
+          <div class="col-6">
+            <small><strong>Penghasilan Orang Tua</strong></small>
+            <table class="table table-sm text-left mb-1">
+              <tr>
+                <td>&lt;1jt</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>1–2jt</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>2-3jt</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>&gt;3jt</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="col-6">
+            <small><strong>Status Rumah</strong></small>
+            <table class="table table-sm text-left mb-1">
+              <tr>
+                <td>Menumpang</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Kontrak</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Milik</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <small class="text-muted">
+          ≥75: <span style="color: red">Tinggi</span> | ≥50:
+          <span style="color: orange">Sedang</span> | &lt;50:
+          <span style="color: green">Rendah</span>
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
